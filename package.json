@@ -1,6 +1,6 @@
 {
   "name": "@pettersonmiler/xxx-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -19,7 +19,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "pub": "publish --access=public"
   },
   "peerDependencies": {
     "prop-types": "15.x",
