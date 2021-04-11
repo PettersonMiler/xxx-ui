@@ -1,0 +1,67 @@
+{
+    "env": {
+        "browser": true
+    },
+    "extends": ["airbnb", "prettier"],
+    "parser": "babel-eslint",
+    "globals": {
+        "FormData": true
+    },
+    "plugins": [
+        "react-hooks"
+    ],
+    "rules": {
+        "react-hooks/rules-of-hooks": "error",
+        "brace-style": ["error"],
+        "keyword-spacing": ["error"],
+        "space-before-blocks": ["error"],
+        "indent": ["error", 4, {
+            "SwitchCase": 1
+        }],
+        "import/prefer-default-export": ["off"],
+        "jsx-a11y/img-has-alt": ["off"],
+        "jsx-a11y/label-has-for": ["off"],
+        "no-underscore-dangle": ["error", {
+            "allow": ["__t", "__n", "__d", "__c"]
+        }],
+        "react/forbid-prop-types": ["off"],
+        "react/jsx-closing-bracket-location": ["off"],
+        "react/jsx-filename-extension": ["off"],
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
+        "react/no-unused-prop-types": [
+            "error", {
+                "skipShapeProps": true
+            }
+        ],
+        "import/no-extraneous-dependencies": ["error", {
+            "devDependencies": [
+                "setupTests.js",
+                "**/*.spec.js",
+                "**/*.spec.jsx",
+                "**/*.stories.js"
+            ]
+        }],
+        "react/jsx-props-no-spreading": "off"
+    },
+    "overrides": [
+        {
+            "files": ["**/*.spec.js"],
+            "env": {
+                "jest": true
+            },
+            "globals": {
+                "React": true,
+                "renderStyledComponent": true,
+                "styledComponentsSnapshots": true,
+                "shallow": true
+            }
+        },
+        {
+            "files": ["**/*.stories.js", "**/*.spec.js"],
+            "rules": {
+                "react/jsx-filename-extension": ["off"]
+            }
+        }
+    ]
+}
