@@ -11,6 +11,10 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
+var _styledComponents = require("styled-components");
+
+var _theme = _interopRequireDefault(require("../theme"));
+
 var Styled = _interopRequireWildcard(require("./InputField.styles"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -34,7 +38,9 @@ var InputField = function InputField(_ref) {
       onChange = _ref.onChange,
       props = _objectWithoutProperties(_ref, ["id", "type", "label", "name", "value", "onChange"]);
 
-  return /*#__PURE__*/_react["default"].createElement(Styled.InputWrapper, null, label && /*#__PURE__*/_react["default"].createElement(Styled.Label, {
+  return /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeProvider, {
+    theme: _theme["default"]
+  }, /*#__PURE__*/_react["default"].createElement(Styled.InputWrapper, null, label && /*#__PURE__*/_react["default"].createElement(Styled.Label, {
     htmlFor: id
   }, label), /*#__PURE__*/_react["default"].createElement(Styled.InputField, _extends({
     id: id,
@@ -42,7 +48,7 @@ var InputField = function InputField(_ref) {
     value: value,
     onChange: onChange,
     name: name
-  }, props)));
+  }, props))));
 };
 
 InputField.propTypes = {
